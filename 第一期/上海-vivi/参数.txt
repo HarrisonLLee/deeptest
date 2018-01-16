@@ -1,0 +1,75 @@
+函数的参数问题总结：
+1、位置参数；
+传入两个参数按照位置顺序依次赋给赋给定义参数
+def power(x, n):
+    s = 1
+    while n > 0:
+        n = n -1
+        s = s * x
+    return s
+说明：s = 1相当于初始化
+power(3,4)
+
+
+2、默认参数；
+#通过定义上面的位置函数，再执行就报错了
+>>> power(5)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: power() missing 1 required positional argument: 'n'
+
+提示缺少一个参数 ，那我们添加一个默认值上去，执行看看
+>>> def power(x, n=2):
+    s = 1
+    while n > 0:
+        s = s * x
+        n = n -1
+    return s
+>>> power(4)
+16
+>>> power(4,3)
+64
+解：power默认是两次方，添加这个默认值就不会跟原来的冲突啦
+#定义默认参数必须指向不变对象，想要灵活一点就用None这个不变对象来实现
+>>>def add_end(L=None):
+  
+
+
+3、可变参数；即传入的参数个数是可变的，可以是任意个，也可以是0个
+$def calc(*numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+print(calc(1, 2))
+print(calc(2))
+
+执行结果：
+5
+4
+
+ 
+4、关键字参数；可以传入0个或任意个参数名的参数，这些关健字参数在函数内部自动组装为一个dict
+
+>>> def person(name, age, **kw):
+...     print('name:', name, 'age:', age, 'other:',kw)
+    
+...     
+>>> person('vv', 18)
+name: vv age: 18 other: {}
+>>> person('bob', 20, city = 'beijing')
+name: bob age: 20 other: {'city': 'beijing'}
+
+
+5、命名关键字参数：与关键字不同的是，这里需要一个特殊分隔符，*后面的参数被视为命名关健字参数，调用的时候一定要传入参数名，否则报错
+>>> def person(name, age, *, city, job):
+...     print(name, age, city, job)
+...     
+>>> person('jack', 24, city='beijing', job='Engineer')
+jack 24 beijing Engineer
+
+
+6、参数组合：
+a.参数定义的顺序必须是：必选参数，默认参数，可变参数/命名关键字参数，关健字参数
+b.*args是可变参数，args接收的是一个tuple;
+  **kw 是关键字参数，kw接收的是一个dirt

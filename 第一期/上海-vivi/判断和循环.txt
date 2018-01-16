@@ -1,0 +1,65 @@
+#条件判断
+age = int(input('your age is:'))
+
+if age >= 18:
+    #print('your age is', age)
+    print('adult')
+elif age >= 6:
+    print('teenager')
+else:
+    print('kid')
+	
+#练习：小明身高1.75,体重80.5KG.请根据BMI公式（体重除以身高的平方）帮小明计算他的BMI指数，并根据BMI指数：1、低于18.5：过轻；2、18.5-25：正常
+#3、25-28：过重 ；4、28-32：肥胖； 5、高于32：严重肥胖
+height = 1.75
+weight = 80.5
+
+BMI = weight / (height*height)
+
+if BMI < 18.5:
+    print('过轻')
+elif 18.5 <= BMI <=25:
+    print('正常')
+elif 25 < BMI <= 28:
+    print('过重')
+elif 28 < BMI <= 32:
+    print('肥胖')
+else:
+    print('严重肥胖')
+	
+	
+#for循环
+#计算1-10的整数之和：
+sum = 0
+
+for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+    sum = sum + i
+
+print(sum)
+
+#计算1-100的整数之和：
+sum = 0
+for i in range(101):
+    sum = sum + i
+
+print(sum)
+	
+#while循环：条件满足，就不断循环；条件不满足，就跳出循环
+#计算100以内所有奇数之和
+sum = 0
+n = 99
+while n > 0:
+    sum = sum + n
+    n = n -2
+print(sum)
+
+#练习：请利用循环依次对list中的每个名字打印中Hello, xxx! ˖L = ['Bart', 'Lisa', 'Adam']
+L = ['Bart', 'Lisa', 'Adam']
+for i in L:
+    print('hello,%s!' % i)
+#执行结果
+hello,Bart!
+hello,Lisa!
+hello,Adam!
+
+

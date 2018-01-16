@@ -1,0 +1,39 @@
+#random模块中的一些重要函数：
+#从大于等于0小于1中随机取任意实数
+1、random.random()    
+>>> random.random()
+0.9245697313402531
+
+#以长整型形式返回N个随机位
+2、random.getrandbits(n)   
+示例：
+>>> random.getrandbits(8)
+168L
+
+#返回随机实数n,其中a<=n<b,n大于等于a,小于b
+3、random.uniform(a,b)     
+示例：
+>>> random.uniform(3,9)
+5.218139950481181
+
+#每次以step数隔在start与stop间取随机数
+4、random.randrange(start,stop,step) 
+>>> random.randrange(3,8,2)
+3
+>>> random.randrange(3,8,2)
+7
+
+#在一个列表中取任意一位数
+5、random.choice(seq)    
+>>> random.choice([2,3,4,5,6,7])
+2
+>>> random.choice([2,3,4,5,6,7])
+7
+
+#从序列中随机选择n个数
+6、random.sample(seq,n)   
+示例：
+>>> random.sample([2,3,4,58,4,5,7,8],4)
+[58, 5, 4, 7]
+>>> random.sample([2,3,4,58,4,5,7,8],4)
+[2, 8, 3, 58]

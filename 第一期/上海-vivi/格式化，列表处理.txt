@@ -1,0 +1,74 @@
+#格式化  （%d 整数),(%s 字符串，不记得的话可表所有)，(%f 浮点数)
+#练习
+#小明的成绩从去年的72分提升到了今年的85分，请计算小明成绩提升的百分点，并用字符串格式化显示出‘xx.x%’,只保留小数点后1位：
+
+s1 = 72
+s2 = 85
+
+r = (s2 - s1) / s1
+print('%.1f %%' % r)
+
+#执行结果：0.2%
+
+
+#list 和 tuple
+#list:列表，可随意增删
+>>> classmate
+['vv', 'cc', 'dd']
+>>> len(classmate)
+3
+>>> classmate[0]
+'vv'
+>>> classmate[-1]
+'dd'
+
+>>> classmate = ['vv', 'cc', 'aa']
+>>> classmate
+['vv', 'cc', 'aa']
+
+#往list中追加元素
+>>> classmate.append('admin')
+#把元素插入到指定位置
+>>> classmate.insert(1, 'jack')
+>>> classmate
+['vv', 'jack', 'cc', 'aa', 'admin']
+>>> classmate.insert(2, 'bad')
+>>> classmate
+['vv', 'jack', 'bad', 'cc', 'aa', 'admin']
+#删除指定位置元素
+>>> classmate.pop(-1)
+'admin'
+>>> classmate
+['vv', 'jack', 'bad', 'cc', 'aa']
+>>> classmate.pop(0)
+'vv'
+>>> classmate
+['jack', 'bad', 'cc', 'aa']
+
+#tuple :元组， 一旦初始化就不能修改，获取元素跟list是一样的
+#计数
+>>> classmate.count('vv')
+1
+#位置
+>>> classmate.index('vv')
+0
+
+#注：python为了消除歧义，需要在定义只有一个元素的tuple时加一个逗号，来区分
+>>> t = (1,)
+>>> t
+(1,)
+#当tuple中含有list时可修改
+>>> t = ('a', 'b', ['x', 'y'])
+>>> t[2][0] ='A' 
+>>> t[2][1] = 'B' 
+>>> t
+('a', 'b', ['A', 'B'])
+
+#练习： L = [['Apple', 'Google', 'Microsoft'], ['Java', 'Python', 'Ruby', 'PHP'], ['Adam', 'Bart', 'Lisa']]，打印Apple,打印Python,打印Lisa
+>>> L = [['Apple', 'Google', 'Microsoft'], ['Java', 'Python', 'Ruby', 'PHP'], ['Adam', 'Bart', 'Lisa']]
+>>> print(L[0][0])
+Apple
+>>> print(L[1][1])
+Python
+>>> print(L[2][2])
+Lisa
