@@ -2,7 +2,7 @@
 __author__='棒棒糖'
 #导入os模块
 import os
-if __name__='__main__':
+if __name__=='__main__':
     #获取完整的路径目录
     print('获取完整的路径目录')
     print(os.getcwd())
@@ -43,7 +43,7 @@ if __name__='__main__':
     print('规范化目标路径:%s'%os.path.normpath(path))
     #将文件名和目录分割
     #如果传入的是目录，则将最后的目录名做为文件名分割
-    print('目录和文件名分割：',end'')
+    print('目录和文件名分割：',end='')
     print(os.path.split(path))
     #分离文件名和扩展名
     print('文件名和扩展名分离:',end='')
@@ -51,7 +51,7 @@ if __name__='__main__':
     #获取文件名
     print('文件名为：%s'%os.path.basename(path))
     #获取文件所在目录
-    print('文件目录为:%s'os.path.dirname(path))
+    print('文件目录为:%s'%os.path.dirname(path))
 
 #目录遍历方法：walk
 #walk返回值说明： 返回值为一个迭代器对象，它的每个部分包含一个元组，

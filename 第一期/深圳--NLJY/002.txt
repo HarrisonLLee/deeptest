@@ -1,0 +1,11 @@
+git fetch upstream
+
+
+git merge upstream/master
+git add .
+
+
+git commit -m "aaa"
+
+
+git push
